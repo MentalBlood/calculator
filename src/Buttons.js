@@ -8,12 +8,8 @@ class Buttons extends Component {
         super(props);
 
         this.state = {
-            rows: [
-                ['7', '8', '9', '/'],
-                ['4', '5', '6', '*'],
-                ['1', '2', '3', '-'],
-                ['c', '0', '=', '+']
-            ]
+            rows: props.rows,
+            anyButtonClickHandler: props.anyButtonClickHandler
         }
     }
 
@@ -21,7 +17,7 @@ class Buttons extends Component {
         return (
             <div className = 'Buttons'>
                 {
-                    this.state.rows.map((row, index) => <ButtonsRow buttonsTexts = {row}></ButtonsRow>)
+                    this.state.rows.map((row, index) => <ButtonsRow anyButtonClickHandler = {this.state.anyButtonClickHandler} key = {index} buttonsTexts = {row}></ButtonsRow>)
                 }
             </div>
         );

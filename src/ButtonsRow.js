@@ -7,14 +7,15 @@ class ButtonsRow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            buttonsTexts: props.buttonsTexts
+            buttonsTexts: props.buttonsTexts,
+            anyButtonClickHandler: props.anyButtonClickHandler
         }
     }
     render() { 
         return (
             <div className = 'ButtonsRow'>
                 {
-                    this.state.buttonsTexts.map((buttonText, index) => <Button>{buttonText}</Button>)
+                    this.state.buttonsTexts.map((buttonText, index) => <Button clickHandler = {this.state.anyButtonClickHandler} key = {index}>{buttonText}</Button>)
                 }
             </div>
         );

@@ -6,12 +6,20 @@ class Button extends Component {
         super(props);
 
         this.state = {
-            'text': props.children
+            'text': props.children,
+            clickHandler: props.clickHandler
         }
+
+        this.onClick = this.onClick.bind(this)
     }
+
+    onClick() {
+        this.state.clickHandler(this.state.text)
+    }
+
     render() { 
         return (
-            <button className = 'Button' align = 'center'>{this.state.text}</button>
+            <button onClick = {this.onClick} className = 'Button'>{this.state.text}</button>
         );
     }
 }

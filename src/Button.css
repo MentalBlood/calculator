@@ -1,4 +1,8 @@
 .Button {
     width: 25%;
     height: 100%;
+    background-color: lightsteelblue;
+    border-width: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5vh
 }
