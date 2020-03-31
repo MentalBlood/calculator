@@ -12,7 +12,7 @@ class ButtonsRow extends Component {
         return (
             <tr>
                 {
-                    this.state.buttonsTexts.map((buttonText, index) => <td><Button>{buttonText}</Button></td>)
+                    this.state.buttonsTexts.map((buttonText, index) => <td align = 'center'><Button>{buttonText}</Button></td>)
                 }
             </tr>
         );

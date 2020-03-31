@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-class Button extends Component {
+class Display extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            'text': props.children
+            text: props.text
         }
     }
     render() { 
         return (
-            <button align = 'center'>{this.state.text}</button>
+            <input type = 'text' size = '8'></input>
         );
     }
 }
  
-export default Button;
+export default Display;
