@@ -10,7 +10,7 @@ class Button extends Component {
     }
     render() { 
         return (
-            <button align = 'center'>{this.state.text}</button>
+            <button style={{ width: 30, height: 30}} align = 'center'>{this.state.text}</button>
         );
     }
 }
