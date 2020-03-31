@@ -58,7 +58,6 @@ class App extends Component {
     }
 
     calculate() {
-        console.log('calculate', this.state.currentOperand, 'and', this.state.displayedText)
         this.setState(state => {
             let a = parseFloat(this.state.currentOperand, 10)
             let b = parseFloat(this.state.displayedText, 10)
@@ -75,12 +74,8 @@ class App extends Component {
     anyButtonClickHandler(text) {
         let buttonData = this.state.buttonsData[text]
         if (buttonData.type === 'digit') {
-            if (this.state.currentOperator) {
+            if (this.state.displayedText.length < 10)
                 this.setState(state => ({displayedText: state.displayedText + text}))
-            }
-            else
-                if (this.state.displayedText.length < 10)
-                    this.setState(state => ({displayedText: state.displayedText + text}))
         }
         else if (buttonData.type === 'operator') {
             //this.calculate()
