@@ -19,7 +19,7 @@ class Button extends Component {
 
     render() { 
         return (
-            <button onClick = {this.onClick} className = 'Button'>{this.state.text}</button>
+            <button onClick = {this.onClick} className = 'Button zoomIn'>{this.state.text}</button>
         );
     }
 }

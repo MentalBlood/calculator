@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Buttons from './Buttons';
 import Display from './Display'
+import './animations.css'
 import './App.css'
 
 function operator(func) {
