@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Button.css'
 
 class Button extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Button extends Component {
     }
     render() { 
         return (
-            <button style={{ width: 30, height: 30}} align = 'center'>{this.state.text}</button>
+            <button className = 'Button' align = 'center'>{this.state.text}</button>
         );
     }
 }

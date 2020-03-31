@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import './Button.css'
+import './ButtonsRow.css'
 
 class ButtonsRow extends Component {
     constructor(props) {
@@ -10,11 +12,11 @@ class ButtonsRow extends Component {
     }
     render() { 
         return (
-            <tr>
+            <div className = 'ButtonsRow'>
                 {
-                    this.state.buttonsTexts.map((buttonText, index) => <td align = 'center'><Button>{buttonText}</Button></td>)
+                    this.state.buttonsTexts.map((buttonText, index) => <Button>{buttonText}</Button>)
                 }
-            </tr>
+            </div>
         );
     }
 }

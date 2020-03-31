@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Display.css'
 
 class Display extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Display extends Component {
     }
     render() { 
         return (
-            <input type = 'text' size = '8'></input>
+            <input className = 'Display' type = 'text' size = '8'></input>
         );
     }
 }

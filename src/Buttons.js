@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ButtonsRow from './ButtonsRow'
+import './Buttons.css'
+import './ButtonsRow.css'
 
 class Buttons extends Component {
     constructor(props) {
@@ -17,12 +19,10 @@ class Buttons extends Component {
 
     render() {
         return (
-            <div className='Buttons'>
-                <table align = 'left'>
-                    {
-                        this.state.rows.map((row, index) => <tr><ButtonsRow buttonsTexts = {row}></ButtonsRow></tr>)
-                    }
-                </table>
+            <div className = 'Buttons'>
+                {
+                    this.state.rows.map((row, index) => <ButtonsRow buttonsTexts = {row}></ButtonsRow>)
+                }
             </div>
         );
     }
