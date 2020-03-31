@@ -59,13 +59,14 @@ class App extends Component {
     }
 
     calculate() {
-        this.setState(state => {
-            let a = parseFloat(this.state.currentOperand, 10)
-            let b = parseFloat(this.state.displayedText, 10)
-            let result = this.state.currentOperator(a, b).toString()
-            let resultSliced = result.slice(0, Math.min(result.length, 10))
-            return {displayedText: resultSliced, typingSecondOperand: false, currentOperand: resultSliced, currentOperator: (a, b) => a}
-        })
+        if (this.state.displayedText)
+            this.setState(state => {
+                let a = parseFloat(this.state.currentOperand, 10)
+                let b = parseFloat(this.state.displayedText, 10)
+                let result = this.state.currentOperator(a, b).toString()
+                let resultSliced = result.slice(0, Math.min(result.length, 10))
+                return {displayedText: resultSliced, typingSecondOperand: false, currentOperand: resultSliced, currentOperator: (a, b) => a}
+            })
     }
 
     cleanDisplay() {
@@ -79,8 +80,8 @@ class App extends Component {
                 this.setState(state => ({displayedText: state.displayedText + text}))
         }
         else if (buttonData.type === 'operator') {
-            //this.calculate()
-            this.setState(state => ({currentOperand: state.displayedText, currentOperator: buttonData.func, displayedText: '', typingSecondOperand: true}))
+            if (this.state.displayedText)
+                this.setState(state => ({currentOperand: state.displayedText, currentOperator: buttonData.func, displayedText: '', typingSecondOperand: true}))
         }
         else if (buttonData.type === 'calculator')
             this.calculate()
